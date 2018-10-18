@@ -5,6 +5,8 @@ defmodule Explorer.Chain.Supply.TransactionAndLog do
 
   import Ecto.Query, only: [from: 2]
 
+  @behaviour Supply
+
   @impl Supply
   def circulating, do: total(Timex.now())
 

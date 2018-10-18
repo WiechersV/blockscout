@@ -20,8 +20,7 @@ defmodule Explorer.ExchangeRates.Source.TransactionAndLog do
     {:ok, [token_data]}
   end
 
-  @doc false
-  def build_struct(original_token) do
+  defp build_struct(original_token) do
     %Token{
       available_supply: to_decimal(Chain.circulating_supply()),
       btc_value: original_token.btc_value,
